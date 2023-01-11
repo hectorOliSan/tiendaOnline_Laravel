@@ -14,5 +14,8 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
-});
+    $viewData = [];
+    $viewData["title"] = "Página principal - E Code";
+    return view('home.index')->with("viewData", $viewData);
+})->name("home.index");
+Route::get('/about', 'App\Http\Controllers\HomeController@about')->name("home.about");

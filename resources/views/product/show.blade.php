@@ -10,7 +10,7 @@
       <div class="col-md-8">
         <div class="card-body">
           <h5 class="card-title">
-            {{ $viewData['product']['name'] }} ({{ $viewData['product']['price'] }})
+            {{ $viewData['product']['name'] }} ({{ $viewData['product']['price'] }}€)
           </h5>
           <p class="card-text">{{ $viewData['product']['description'] }}</p>
           <p class="card-text"><small class="text-muted">Añadir a la cesta</small></p>

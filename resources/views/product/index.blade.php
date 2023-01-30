@@ -6,7 +6,7 @@
     @foreach($viewData['products'] as $clave => $valor)
       <div class="col-md-4 col-lg-3 mb-2">
         <div class="card">
-          <img src="{{ asset('img/'.$valor['image']) }}" class="card-img-top img-card">
+          <img src="{{ asset('storage/'.$valor['image'])  }}" class="card-img-top img-card">
           <div class="card-body text-center">
             <a href="{{ route('product.show', ['id'=> $valor["id"]]) }}"
               class="btn bg-primary text-white">{{ $valor['name'] }}</a>

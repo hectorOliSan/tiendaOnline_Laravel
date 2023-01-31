@@ -9,11 +9,11 @@
 
     @if ($errors->any())
       <div class="alert alert-danger">
-          <ul>
-              @foreach ($errors->all() as $error)
-                  <li>{{ $error }}</li>
-              @endforeach
-          </ul>
+        <ul>
+          @foreach ($errors->all() as $error)
+            <li>{{ $error }}</li>
+          @endforeach
+        </ul>
       </div>
     @endif
 
@@ -73,8 +73,22 @@
           <tr>
             <td>{{ $valor['id'] }}</td>
             <td>{{ $valor['name'] }}</td>
-            <td><a href="">Editar</a></td>
-            <td><a href="">Eliminar</a></td>
+            <td>
+              <form method="GET" action="{{ route('admin.product.edit', ['id' => $valor["id"]]) }}">
+								<button class='btn btn-primary' type='submit'>
+									<i class="bi bi-pencil-square"></i>
+								</button>
+							</form>
+            </td>
+            <td>
+              <form method="POST" action="{{ route('admin.product.delete', ['id' => $valor["id"]]) }}">
+								@csrf
+								@method('DELETE')
+								<button class='btn btn-danger' type='submit' onclick="return confirm('¿Seguro que quieres borrar el producto?')">
+										<i class="bi bi-trash"></i>
+								</button>
+							</form>
+            </td>
           </tr>
         @endforeach
       </tbody>

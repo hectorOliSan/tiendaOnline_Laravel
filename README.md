@@ -1,9 +1,7 @@
-# A5.8 - Panel de control - Eliminando y editando productos
+# A5.9 - Panel de control - Validación de usuarios
 
--   Habilita el enlace correspondiente del listado de productos del panel de control para que se pueda llevar a cabo la eliminación de productos de nuestra tienda online. Para ello, crea una nueva ruta "DELETE" denominada "/admin/products/{id}/delete" que mediante el método "delete" del controlador "AdminProductController" realizará el borrado.
+-   Crea dos nuevos enlaces en la plantilla de la tienda online que apunten a las rutas **"login"** y **"register"**. Se mostrarán solo si el usuario no está logueado.
 
--   Activa el botón de edición del listado de productos del panel de control para que puedas editar productos de nuestra tienda. Para ello, crea las siguientes rutas:
+-   Crea un nuevo enlace en la plantilla de la tienda online que se muestre solo si el usuario está logueado y que apunte a la ruta **"logout"**. Que solo se muestre si estás logueado. Encontrarás un problema y deberás solucionar.
 
-    -   "/admin/products/{id}/edit" - Será gestionada por el método "edit" del controlador "AdminProductController". Dicho método mostrará un formulario en la vista "admin.product.edit" que permitirá visualizar los datos actuales del producto y actualizarlos postriormente.
-
-    -   "/admin/products/{id}/update" - Será la ruta a la que se enviará el formulario anterior para realizar la actualización. La gestionará el método "update" del controlador "AdminProductController".
+-   Crea una nueva migración que te permita añadir un campo denominado **"role"** que podrá tener dos valores: **"admin"** o **"client"**. Es muy importante que el rol por defecto tenga el valor **"client"**. Ayúdate de [Creating Columns](https://laravel.com/docs/9.x/migrations#creating-columns) y de [Dropping Columns](https://laravel.com/docs/9.x/migrations#dropping-columns) para crear la migración.

@@ -21,4 +21,21 @@ class HomeController extends Controller
         $viewData["author"] = "Héctor Olivares Sánchez";
         return view("home.about")->with("viewData", $viewData);
     }
+
+    public function configuracion()
+    {
+        $viewData = [];
+        $viewData["title"] = "Configuración - E Code";
+        $viewData["subtitle"] = "Configuración";
+        return view("home.configuracion")->with("viewData", $viewData);
+    }
+
+    public function sesion(Request $request)
+    {
+        session([
+            'encabezado' => $request->input('encabezado'),
+            'letra' => $request->input('letra')
+        ]);
+        return redirect()->route('home.index');
+    }
 }

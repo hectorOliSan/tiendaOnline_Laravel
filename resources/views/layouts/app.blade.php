@@ -34,7 +34,11 @@
       src="https://www3.gobiernodecanarias.org/educacion/cau_ce/estadisticasweb/scripts/piwik-eforma.js"
     ></script>
   </head>
-  <body>
+  @if(Session::has('letra'))
+      <body style="font-family: {{ Session::get('letra') }}">
+  @else
+      <body>
+  @endif
     <!-- header -->
 
     <nav class="navbar navbar-expand-lg navbar-dark bg-secondary py-4">
@@ -63,6 +67,7 @@
               <a class="nav-link active" href="{{ route('login') }}">LogIn</a>
               <a class="nav-link active" href="{{ route('register') }}">Register</a>
             @else
+              <a class="nav-link active" href="{{ route('home.configuracion') }}">Configuración</a>
               <a class="nav-link active" href="{{ route('logout') }}">LogOut</a>
             @endif
           </div>
@@ -70,7 +75,12 @@
       </div>
     </nav>
 
-    <header class="masthead bg-primary text-white text-center py-4">
+    @if(Session::has('encabezado'))
+      <header class="masthead text-white text-center py-4"
+      style="background-color: {{ Session::get('encabezado') }}">
+    @else
+      <header class="masthead bg-primary text-white text-center py-4">
+    @endif
       <div class="container d-flex align-items-center flex-column">
         <h2>@yield('subtitle', 'Una tienda online Laravel')</h2>
       </div>

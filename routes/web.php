@@ -34,3 +34,6 @@ Route::middleware('admin')->group(function () {
 
 Route::get('logout', 'App\Http\Controllers\Auth\LoginController@logout');
 Auth::routes();
+
+Route::get('/configuracion', 'App\Http\Controllers\HomeController@configuracion')->name("home.configuracion");
+Route::post('/configuracion/store', 'App\Http\Controllers\HomeController@sesion')->name("home.sesion");

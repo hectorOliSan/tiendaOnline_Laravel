@@ -1,7 +1,15 @@
-# A5.9 - Panel de control - Validación de usuarios
+# A5.10 - Panel de control - Control de acceso y gestión de variables de sesión
 
--   Crea dos nuevos enlaces en la plantilla de la tienda online que apunten a las rutas **"login"** y **"register"**. Se mostrarán solo si el usuario no está logueado.
+## (Última tarea de la UT5)
 
--   Crea un nuevo enlace en la plantilla de la tienda online que se muestre solo si el usuario está logueado y que apunte a la ruta **"logout"**. Que solo se muestre si estás logueado. Encontrarás un problema y deberás solucionar.
+Realiza estas modificaciones a la aplicación implementada en la tarea A5.9
 
--   Crea una nueva migración que te permita añadir un campo denominado **"role"** que podrá tener dos valores: **"admin"** o **"client"**. Es muy importante que el rol por defecto tenga el valor **"client"**. Ayúdate de [Creating Columns](https://laravel.com/docs/9.x/migrations#creating-columns) y de [Dropping Columns](https://laravel.com/docs/9.x/migrations#dropping-columns) para crear la migración.
+-   Impide el acceso al panel de control a los usuarios que no tienen el rol "admin". En caso de que un usuario sin ese rol intente entrar, redirígelo a la página de inicio.
+
+-   Habilita una página de configuración a la que podrán acceder todos los usuarios validados, de forma que se pueda modificar, durante la sesión, el color del encabezado y el tipo de letra que se utilizan en la plantilla de la tienda online. Para ello, utiliza los métodos siguientes. (Más información en [este enlace](https://laravel.com/docs/9.x/session#the-global-session-helper)):
+
+    -   `$value = session('key');`
+    -   `session(['key' => 'value']);`
+    -   `$value = session('key', 'default');`
+
+Además de presentar al profesor esta actividad, adjunta en esta tarea un fichero comprimido que contenga todo el código de la aplicación.

@@ -9,8 +9,6 @@
 		<select class="form-select col-12" name="letra">
 			@if(Session::has('letra'))
 				<option selected hidden>{{ Session::get('letra') }}</option>
-			@else
-					<body>
 			@endif
 			<option value="Helvetica">Helvetica</option>
 			<option value="Arial">Arial</option>

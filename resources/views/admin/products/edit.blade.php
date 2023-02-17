@@ -47,6 +47,10 @@
         </div>
       </div>
       <div class="mb-3">
+        <label class="form-label">Especificaciones</label>
+        <input name="especificaciones" type="file" class="form-control" accept="*/*">
+      </div>
+      <div class="mb-3">
           <label class="form-label">Descripción</label>
           <textarea class="form-control" name="description" rows="3">{{$viewData['product']['description']}}</textarea>
       </div>

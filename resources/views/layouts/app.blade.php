@@ -67,7 +67,13 @@
               <a class="nav-link active" href="{{ route('login') }}">LogIn</a>
               <a class="nav-link active" href="{{ route('register') }}">Register</a>
             @else
-              <a class="nav-link active" href="{{ route('home.configuracion') }}">Configuración</a>
+              @if(Session::has('encabezado'))
+                <a class="nav-link active"  style="color: {{ Session::get('encabezado') }}"
+                  href="{{ route('home.configuracion') }}">{{Auth::user()['name']}}</a>
+              @else
+                <a class="nav-link active" style="color: #1abc9c"
+                  href="{{ route('home.configuracion') }}">{{Auth::user()['name']}}</a>
+              @endif
               <a class="nav-link active" href="{{ route('logout') }}">LogOut</a>
             @endif
           </div>

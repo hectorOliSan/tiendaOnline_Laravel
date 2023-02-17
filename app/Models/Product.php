@@ -9,7 +9,7 @@ class Product extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['name', 'description', 'image', 'price'];
+    protected $fillable = ['name', 'description', 'image', 'price', 'especificaciones'];
 
     public function getID(): int{
         return $this -> attributes["id"];
@@ -45,5 +45,15 @@ class Product extends Model
 
     public function setPrice(float $price): void{
         $this -> attributes["price"] = $price;
+    }
+
+    public function getEspecificaciones(): String
+    {
+        return $this->attributes["especificaciones"];
+    }
+
+    public function setEspecificaciones(String $especificaciones): void
+    {
+        $this->attributes["especificaciones"] = $especificaciones;
     }
 }
